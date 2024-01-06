@@ -53,11 +53,19 @@ def find_biggest_number():
     else:
         biggest_num = num3
 
+# Create the Tab 2 - Result
+tab_result = ttk.Frame(notebook)
+notebook.add(tab_result, text='Result')
+
+result_label = tk.Label(tab_result, text="", fg="#FF69B4", font=('Helvetica', 18, 'bold'))
+result_label.pack(pady=20)
+
+
 # Pack the notebook to make it visible
 notebook.pack(expand=1, fill='both')
 
 # Run the main loop
 window.mainloop()
 
-# Create the Tab 2 - Result
+
 
