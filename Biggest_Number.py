@@ -10,6 +10,7 @@ from tkinter import ttk
 window = tk.Tk()
 window.title("Biggest Number Finder")
 
+
 # Create a notebook (tabs)
 notebook = ttk.Notebook(window, style='MyStyle.TNotebook')
 
@@ -39,6 +40,7 @@ tk.Label(tab_input, text="Enter the third number:", font=('Helvetica', 12)).grid
 entry3 = tk.Entry(tab_input, width=10, font=('Helvetica', 12))
 entry3.grid(row=2, column=1)
 
+
 # Define the function to find the biggest number
 def find_biggest_number():
     # Get user input for three numbers
@@ -53,12 +55,23 @@ def find_biggest_number():
     else:
         biggest_num = num3
 
+        # Switch to the result tab
+    notebook.select(1)
+
+    result_label.config(text=f"The biggest number is: {biggest_num}", fg="#FF69B4")  # Pink color
+
+
+# Create the calculate button
+calculate_button = tk.Button(tab_input, text="Find Biggest Number", command=find_biggest_number, bg="#32CD32", fg="white", font=('Helvetica', 12, 'bold'))
+calculate_button.grid(row=3, column=0, columnspan=2, pady=15)
+
 # Create the Tab 2 - Result
 tab_result = ttk.Frame(notebook)
 notebook.add(tab_result, text='Result')
 
 result_label = tk.Label(tab_result, text="", fg="#FF69B4", font=('Helvetica', 18, 'bold'))
 result_label.pack(pady=20)
+
 
 
 # Pack the notebook to make it visible
