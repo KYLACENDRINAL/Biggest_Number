@@ -39,12 +39,25 @@ tk.Label(tab_input, text="Enter the third number:", font=('Helvetica', 12)).grid
 entry3 = tk.Entry(tab_input, width=10, font=('Helvetica', 12))
 entry3.grid(row=2, column=1)
 
+# Define the function to find the biggest number
+def find_biggest_number():
+    # Get user input for three numbers
+    num1 = float(entry1.get())
+    num2 = float(entry2.get())
+    num3 = float(entry3.get())
+    # Find the biggest number using if statements
+    if num1 >= num2 and num1 >= num3:
+        biggest_num = num1
+    elif num2 >= num1 and num2 >= num3:
+        biggest_num = num2
+    else:
+        biggest_num = num3
+
 # Pack the notebook to make it visible
 notebook.pack(expand=1, fill='both')
 
 # Run the main loop
 window.mainloop()
 
-# Define the function to find the biggest number
 # Create the Tab 2 - Result
 
